@@ -1,7 +1,6 @@
 #!/bin/bash
 #Primer comando de practicas
 #Programa en bash para saber a que maquina le hacemos ping windows o linux
-#!/bin/bash
 error(){
     echo $1
     exit 1
