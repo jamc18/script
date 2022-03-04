@@ -1,4 +1,2 @@
 # Proyectos
-Ideas-locas
-
 
