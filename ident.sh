@@ -1,14 +1,28 @@
 #!/bin/bash
-#Primer comando de practicas
-#Programa en bash para saber a que maquina le hacemos ping windows o linux
+#Funcion error
 error(){
-    echo $1
+    echo "[*]scrip_name.sh <ip or domain>"
     exit 1
 }
+
+#Condicion para que solo acepte un parametro
 if [ $# -ne 1 ]; then
-    error "[*]USO-> scrip.sh <ip objetivo o dominio>"
+    error
 fi
+
+#Comando verificacion
+ping -c 1 $1 >/dev/null 2>&1
+val=$(echo $?)
+
+#Condicion para verificar que la salida sea exitosa del comando ping
+if [ $val -ne 0 ]; then
+    error 
+fi
+
+#Variable con ttl
 ttl=$(ping -c 1 $1|sed "s/ /\n /g"|grep "ttl"|cut -d "=" -f 2)
+
+#Condicion para identifiar el S.O
 if (( $ttl > 64 )) && (( $ttl<=128 )); then
     echo "Windows --> ttl:$ttl"
 elif (( $ttl <=64 )); then
