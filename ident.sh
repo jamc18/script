@@ -1,7 +1,8 @@
 #!/bin/bash
 #Funcion error
 error(){
-    echo "[*]scrip_name.sh <ip or domain>"
+    echo "[!] Usage: ./ident.sh <ip or domain>"
+    echo "[+] Example: ./ident.sh 8.8.8.8  "
     exit 1
 }
 
