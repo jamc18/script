@@ -1,8 +1,8 @@
 #!/bin/bash
 #Funcion error
 error(){
-    echo "[!] Usage: ./ident.sh <ip or domain>"
-    echo "[+] Example: ./ident.sh 8.8.8.8  "
+    echo "[!] Usage: ./$0 <ip or domain>"
+    echo "[+] Example: ./$0 8.8.8.8  "
     exit 1
 }
 
